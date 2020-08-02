@@ -1,6 +1,6 @@
-
 import React from "react";
 import PropTypes from "prop-types";
+import {ListGroupItem, Button} from 'reactstrap';
 
 class MusicItem extends React.Component {
     handleSelectMusic = (e) => {
@@ -10,12 +10,12 @@ class MusicItem extends React.Component {
 
     render() {
         return (
-            <li className="musicItem" onClick={this.handleSelectMusic}>
-                <img src={this.props.thumbnailUrl} alt={this.props.title} />
-                <div className="musicItem__data">
-                    <h3 className="musicItem__title">{this.props.title}</h3>
+            <ListGroupItem tag="button" action style={listStyle} onClick={this.handleSelectMusic}>
+                <div className="musicItem">
+                    <img className="thumbnail" src={this.props.thumbnailUrl} alt={this.props.title}/>
+                    <p>{this.props.title}</p>
                 </div>
-            </li>
+            </ListGroupItem>
         );
     }
 }
@@ -26,5 +26,9 @@ MusicItem.propTypes = {
     thumbnailUrl: PropTypes.string.isRequired,
     //requester: PropTypes.string.isRequired
 };
+
+const listStyle = {
+    display: "inline-block"
+}
 
 export default MusicItem;

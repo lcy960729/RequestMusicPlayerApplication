@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Home, Login, RequestMusic, AdminInterface } from './index';
+import { Login, RequestMusic, AdminInterface } from './index';
 
 const Router = () => (
     <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={RequestMusic} />
         <Route path="/login" component={Login} />
         <Route path="/requestMusic" component={RequestMusic} />
         <Route path="/admin" component={AdminInterface} />

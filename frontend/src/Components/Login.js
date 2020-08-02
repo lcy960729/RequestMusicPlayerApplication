@@ -35,7 +35,12 @@ class Login extends Component {
             window.sessionStorage.setItem('id', id);
             window.sessionStorage.setItem('name', name);
             window.sessionStorage.setItem('provider', provider);
-            this.props.onLogin();
+
+            const isAdmin = (name === '이찬영' ? true : false);
+            window.sessionStorage.setItem('isAdmin', isAdmin);
+
+            console.log(isAdmin);
+            this.props.onLogin(isAdmin);
             this.props.history.push('/');
     }
 
@@ -44,7 +49,7 @@ class Login extends Component {
             <Container>
                 <KakaoButton
                     jsKey={'6294828c7b0c332679aea0c2171b627b'}
-                    buttonText="Kakao"
+                    buttonText="Kakao 계정으로 로그인 "
                     onSuccess={this.responseKakao}
                     onFailure={this.responseFail}
                     getProfile="true"
@@ -54,9 +59,9 @@ class Login extends Component {
     }
 }
 
-const Container = styled.div`
-    display: flex;
-    flex-flow: column wrap;
+const Container = styled.div`;
+    margin: 0 auto;
+    text-align: center;
 `
 
 const KakaoButton = styled(KakaoLogin)`
@@ -71,6 +76,7 @@ const KakaoButton = styled(KakaoLogin)`
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+    margin-top: 70vh;
 `
 
 export default withRouter(Login);

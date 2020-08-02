@@ -5,21 +5,19 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
 
     render() {
-        const { logged, onLogout } = this.props;
-
+        const { onLogout, isAdmin } = this.props;
         return (
             <Container>
                 <Element>
-                    {logged ? 
-                    <ShortCut><Link to="/" onClick={onLogout}>로그아웃</Link></ShortCut> : 
-                    <ShortCut><Link to="/login"></Link></ShortCut>}
+                    <ShortCut>
+                        {isAdmin ? <Link style={{marginRight : '10px'}} to='/admin'>관리자</Link> : <></>}
+                        <Link to="/" onClick={onLogout}>로그아웃</Link>
+                    </ShortCut>
                     <Logo>
-                    </Logo>
-                    <Search>
                         <Link to="/" style={{textDecoration: 'none', color:'#274046'}}>
                             <h1>신청곡 서비스</h1>
                         </Link>
-                    </Search>
+                    </Logo>
                 </Element>
             </Container>
         );
@@ -31,13 +29,14 @@ export default Header;
 
 const Container = styled.div`
     width: 100%;
-    border-bottom: 1px solid #FFFFFF;
+    height: 15%;
+    border-bottom: 1px solid #000000;
+    position: sticky;
 `
 
 const Element = styled.div`
     margin: 0 auto;
-    width: 1080px;
-    height: 100px;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
 `
@@ -45,20 +44,12 @@ const Element = styled.div`
 const ShortCut = styled.div`
     order: 1;
     width: 100%;
-    height: 20px;
     text-align: right;
     background-color: #FFFFFF;
 `
 
 const Logo = styled.div`
     order: 2;
-    width: 200px;
-    height: 80px;
-`
-
-const Search = styled.div`
-    order: 3;
-    width: 880px;
-    background-color: #FFFFFF;
+    width: 100%;
     text-align: center;
 `

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+    overflow-y:hidden;
+}
+
+.musicItem {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.thumbnail{
+    margin-right: 10px;
+    float: left;
+    max-width: 100%;
+    height: auto;
+}
+
+.musicItem p{
+    font-size: 0.8rem;
+}
+
+.searchMusic {
+    height: 8%;
+}
+
+.requestMusic{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 13%;
+}
+.requestMusicBtn{
+    width: 100%;
+    height: 100%;
+}
+.searchTextBox{
+    margin-left: 5%;
+    width: 80%;
+    height: 30px;
+}
+
+.searchBtn{
+    margin-right: 5%;
+    width: 10%;
+    height: 30px;
+}
+.musicListContent{
+    height: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.collapse{
+    height: 90%;
+}
+
+.menuBar{
+    width: 100%;
+    height: 8%;
+    margin-bottom: 2%;
+}

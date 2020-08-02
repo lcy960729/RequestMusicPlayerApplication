@@ -4,9 +4,8 @@ import RequestedMusicList from './RequestedMusicList'
 import withLogin from '../LoginHOC';
 
 class Admin extends React.Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.state = {
             playMusic: '',
         }
@@ -20,7 +19,7 @@ class Admin extends React.Component {
 
     render() {
         return (
-            <div>
+            <div align="center">
                 <MusicPlayer
                     onClose={() => {
                         this.setVideo();
